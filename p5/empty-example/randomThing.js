@@ -6,7 +6,9 @@ function setup() {
 function draw() {
   background(0);
 	
-	translate(width/2, height/2);
+	let randWidth = random(0, width);
+	let randHeight = random(0, height);
+	translate(randWidth, randHeight);
 	
 	
 	stroke(120);
