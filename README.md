@@ -1,3 +1,2 @@
 # p5Thinghs
-<h2>eee</h2>
-eeee
+<a href="/p5/GameOfLife/"> Game of life</a>
