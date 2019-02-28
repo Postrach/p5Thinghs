@@ -8,7 +8,7 @@ function draw() {
 	background(0);		
 	let randWidth = random(0, width);	
 	let randHeight = random(0, height);	
-	translate(10, 20);			
+	translate(10, 50);			
 	stroke(120);	
 	noFill();		
 	beginShape();	
