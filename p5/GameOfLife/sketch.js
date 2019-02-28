@@ -12,8 +12,8 @@ function setup() {
 	rows = height / cellSize;
 
 	grid = makeGrid();
-	fillGridWithRandomStates();
-	//fillGridGlider();
+	//fillGridWithRandomStates();
+	fillGridGlider();
 }
 
 function draw() {
