@@ -78,7 +78,7 @@ function fillGridWithRandomStates(){
 			if(i==0 || j == 0 || i == columns -1 || j == rows -1){
 				grid[i][j] = 0;
 			}else{
-				let rand = floor(random(0, 5));
+				let rand = floor(random(0, 3));
 				if(rand == 1){
 					grid[i][j] = 1;
 				}
