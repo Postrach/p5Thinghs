@@ -1,6 +1,6 @@
 let columns;
 let rows;
-let cellSize = 20;
+let cellSize = 10;
 let grid;
 let generation = 0;
 let playing = false;
@@ -31,7 +31,7 @@ function setup() {
 	let button = createButton("reset");
 	button.mousePressed(resetSketch);
 
-	stopButton = createButton("pause");
+	stopButton = createButton("play");
 	stopButton.mousePressed(stop);
 
 	div = createDiv('').size(100,100);
@@ -75,7 +75,6 @@ function draw() {
 		time = millis() + speed * -200;
 		grid = createNewGeneration();
 
-		//console.log("Generation: " + generation);
 		generation++;
 	}
 }
@@ -84,9 +83,7 @@ function stop(){
 	if(playing == true){
 		playing = false;
 		stopButton.html("play");
-		//noLoop();
 	}else{
-		//loop();
 		playing = true;
 		stopButton.html("pause");
 	}
@@ -95,10 +92,10 @@ function stop(){
 //create empty 2d array
 function makeGrid(){
 	let arr = new Array(columns);
-	 for (let i = 0; i < arr.length; i++) {
-		 arr[i] = new Array(rows);
-	 }
-	 return arr;
+	for (let i = 0; i < arr.length; i++) {
+		arr[i] = new Array(rows);
+	}
+	return arr;
 }
 
 //creates new generation based on previous onea
@@ -131,7 +128,7 @@ function checkNeighbors(x, y){
 	for(let i=-1; i <= 1; i++){
 		for(let j=-1; j <=1; j++){
 			if(i==0 && j==0){
-			
+				//neighborCount += 1;
 			}else{
 				if(grid[x+i][y+j] == 1){
 					neighborCount += 1;
@@ -188,7 +185,7 @@ function fillGridGlider(){
 }
 
 function mousePressed(){
-	console.log(mouseX + ", " + mouseY);
+	//console.log(mouseX + ", " + mouseY);
 	if(mouseX > 1 && mouseX < width -1 && mouseY > 1 && mouseY < height -1){
 		let x = floor(mouseX / cellSize);
 		let y = floor(mouseY / cellSize);
@@ -197,5 +194,14 @@ function mousePressed(){
 		}else{
 			grid[x][y] = 0;
 		}
+	}
+}
+
+function mouseDragged(){
+	//console.log(mouseX + ", " + mouseY);
+	if(mouseX > 1 && mouseX < width -1 && mouseY > 1 && mouseY < height -1){
+		let x = floor(mouseX / cellSize);
+		let y = floor(mouseY / cellSize);
+		grid[x][y] = 1;
 	}
 }
