@@ -3,7 +3,7 @@ let rows;
 let cellSize = 20;
 let grid;
 let generation = 0;
-let playing = true;
+let playing = false;
 
 let frameRateSlider;
 let cellSizeSlider;
